@@ -28,7 +28,7 @@
         btn.onclick=function(){
             ul.innerHTML="";
             var q=document.getElementById("q");
-            for(let i=0;i<cs.length;i++){
+            for(var i=0;i<cs.length;i++){
                 if(q.value==cs[i]){
                     search(jsw[i]);
                 }
@@ -39,7 +39,7 @@
     function search(json){
         for(var i in json){
             var script=document.createElement("script");
-            script.src="http://caiyunapp.com/fcgi-bin/v1/api.py?lonlat="+i+","+json[i]+"&format=json&product=minutes_prec&token=f8Oj35RKqBRFldNr&callback=fn";
+            script.src="https://caiyunapp.com/fcgi-bin/v1/api.py?lonlat="+i+","+json[i]+"&format=json&product=minutes_prec&token=f8Oj35RKqBRFldNr&callback=fn";
             document.body.appendChild(script);
         }
     }
